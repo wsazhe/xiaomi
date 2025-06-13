@@ -1,0 +1,322 @@
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MiSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #fff;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 左侧背景区域 */
+        .left {
+            width: 30%;
+            height: 100%;
+            background: url(../register/images/banner.a0e6fbf0.jpg);
+            background-size: cover;
+            background-position: 50%;
+        }
+        /* 右侧登录区域 */
+        .right-section {
+            width: 69%;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .head-logo {
+            display: inline-block;
+            background: url(../register/images/milogo.png);
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            background-color: rgb(255, 105, 0);
+            border-radius: 17px;
+            margin-top: 10px;
+            margin-left: 5px;
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+        .brand h1 {
+            display: inline-block;
+            font-size: 26px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, .8);
+            margin-left: 10px;
+            margin-top: 7px;
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .links a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .links .divider {
+            height: 14px;
+            width: 1px;
+            background: #ccc;
+        }
+
+        .selector select {
+            border: none;
+            background: transparent;
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .login-container {
+            width: 380px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        .tabs a {
+            text-decoration: none;
+            padding: 0 15px 15px;
+            font-size: 18px;
+            color: #666;
+            margin: 0 10px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .tabs a.active {
+            color: #333;
+        }
+
+        .tabs a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #ff6700;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            height: 50px;
+            padding: 0 20px;
+            font-size: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #ff6700;
+            box-shadow: 0 0 0 2px rgba(255, 103, 0, 0.2);
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: flex-start;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .checkbox input[type="checkbox"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+        .checkbox input[type="checkbox"]:checked {
+            background: #ff6700;
+            border-color: #ff6700;
+        }
+
+        .checkbox input[type="checkbox"]:checked::before {
+            content: '\2713';
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .checkbox label {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .checkbox a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .checkbox a:hover {
+            color: #ff6700;
+        }
+
+        .login-button {
+            width: 100%;
+            height: 50px;
+            background: #ff6700;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login-button:hover {
+            background: #ff8533;
+        }
+
+        .login-button:active {
+            background: #e65c00;
+        }
+
+        .additional-links {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0 35px;
+            font-size: 14px;
+        }
+
+        .additional-links a {
+            color: #ff6700;
+            text-decoration: none;
+        }
+
+        .additional-links a:hover {
+            text-decoration: underline;
+        }
+
+        .other-login {
+            text-align: center;
+            position: relative;
+            margin: 40px 0 25px;
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+
+        .other-login::before,
+        .other-login::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .other-login::before {
+            left: 0;
+        }
+
+        .other-login::after {
+            right: 0;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .icon:hover {
+            background: #e0e0e0;
+            transform: translateY(-3px);
+        }
+
+        .icon.wechat:hover {
+            background: #e7f4eb;
+            color: #09bb07;
+        }
+
+        .icon.alipay:hover {
+            background: #e7f4f9;
+            color: #009fe8;
+        }
+
+        .icon.xiaomi:hover {
+            background: #ffefe6;
+            color: #ff6700;
+        }
+
+        .icon.qq:hover {
+            background: #e7f4ff;
+            color: #12b7f5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 30px;
+            color: #b0b0b0;
+            font-size: 12px;
+            line-height: 1.6;
+        }

@@ -1,0 +1,511 @@
+.banner{
+    clear:both;
+    width: 100%;
+    height: 460px;
+}
+.banner-img>img{
+    width: 100%;
+    height: 460px;
+}   
+.banner-box {
+    width: 100%;
+    height: 460px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 刚开始全部不显示，用js去控制显示 */
+    opacity: 0;
+    /* 加个过度效果 */
+    transition: opacity 0.8s linear;
+    z-index: -1;
+    cursor: pointer;
+}
+.banner-img:first-child{
+    opacity: 1;
+}
+.box-left{   
+    position: absolute;
+    background: url("../img/icon-slides.png") no-repeat -84px 50%;
+    top: 50%;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    z-index: 10;
+    cursor: pointer;
+    outline: none;
+    left: 234px;;
+    right:auto
+}
+
+.box-left:hover{
+    background-color: #00000050;
+    color: #fff;
+}
+.box-right{
+    background: url("../img/icon-slides.png") no-repeat -125px 50%;
+    right: 0;
+    left: auto;
+    position: absolute;
+    top: 50%;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    z-index: 10;
+    cursor: pointer;
+    outline: none;
+}
+.box-right:hover{
+    background-color: #00000050;
+    color: #fff;
+}
+.circle-box>ul
+{
+    position: absolute;
+    bottom: 30px;
+    right:50px;
+}
+/* 圆点区域 */
+.btn-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #33333383;
+    float: left;
+    margin-right: 10px;
+    border: 2px solid #b0b0b0;
+    cursor: pointer;
+}
+
+
+/* 轮播图的侧边栏区域 */
+.slide{
+    width: 234px;
+    height: 460px;
+    background-color: rgba(105,101,101,0.6);
+    position: absolute; 
+    top: 0;
+    left:0;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+.slide>ul>li{
+    height: 42px;
+    line-height: 42px;
+    padding-left: 30px;
+}
+.slide a{
+    color: #fff;
+    font-size: 14px;
+}
+.slide>ul>li:hover
+{
+    background-color: #FF6A00;
+}
+.slide i{
+    float: right;
+    padding-right: 20px;
+    color: #fff;
+}
+.slide>ul>li:hover i{
+    color: #b0b0b0;
+}
+
+
+/* 侧边栏滑动门效果 */
+/* 每个侧边栏的滑动窗口太小不一样，所以设置不同的宽度 */
+.slide-list-one{
+    width: 265px;
+}
+.slide-list-two{
+    width: 530px;
+}
+.slide-list-three{
+    width: 785px;
+}
+.slide-list-four{
+    width: 992px;
+}
+.slide-list{
+    height: 460px;
+    position: absolute;
+    top: 0;
+    left: 234px;
+    transition: left 0.8s linear;
+    background-color: #fff;
+    display: none;
+    font-size: 14px;
+    box-shadow: 0 1px 5px #aaa;
+}
+.slide-list>ul{
+    float:left;
+    width: 247px;
+    height: 456px;
+    padding: 2px 0;
+}
+.slide-list>ul>li {
+    width: 100%;
+    height: 76px;
+    padding-left: 20px;
+}
+.slide-list a{
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    height: 76px;
+    line-height: 76px;
+    color: #333;
+}
+.slide-list img{
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-top: 18px;
+    margin-right: 14px;
+}
+/* 因为span在a内，所以span不用设置样式了 */
+.slide-list li:hover>a{
+    color: #FF6A00;
+}
+.slide li:hover>.slide-list{
+    display: block;
+}
+
+/* 广播区的六宫格样式 */
+.Guangbo{
+    width: 100%;
+    height: 170px;
+    margin: 15px 0 25px;
+}
+.Gb-sv{
+    width: 234px;
+    height: 170px;
+    background-color: #5f5750;
+    float: left;
+}
+.Gb-img{
+    float: left;
+    width: 316px;
+    height: 170px;
+    margin-left: 14.6px;
+}
+.Gb-img img{
+    width: 316px;
+    height: 170px;
+}
+.Gb-sv li{
+    width: 76px;
+    height: 82px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+.Gb-sv>ul>li>a{
+    display: block;
+    width: 70px;
+    height: 64px;
+    margin-left: 5px;
+    margin-top: 18px;
+}
+.Gb-sv>ul>li>a>i{
+    color: #cfcdcb;
+    font-size: 24px;
+}
+.Gb-sv>ul>li>a>p{
+    color: #cfcdcb;
+    font-size: 14px;
+    line-height: 28px;
+}
+/* 悬停亮起来 */
+.Gb-sv>ul>li:hover>a>i{
+    color: #fff;
+}
+.Gb-sv>ul>li:hover>a>p{
+    color: #fff;
+}
+.Gb-img img:hover{
+    box-shadow: 0 8px 9px #b0b0b067;
+    transition: box-shadow 0.3s linear;
+}
+
+
+/* 中间图片 */
+
+
+/* 商品主体列表样式 */
+/* 主题区域有背景颜色 */
+.main{
+    background-color: #f5f5f5;
+    overflow: hidden;
+    width: 100%;
+}
+.GG-box {
+    height: 120px;
+    margin: 22px 0;
+}
+/* 手机卖场 */
+.phone{
+    width: 100%;
+    height: 686px;
+    margin-top: 8px;
+}
+.title {
+    height: 58px;
+    line-height: 58px;
+    font-weight: 200;
+    font-size: 22px;
+    color: #333;
+    display: flex;  /* 使用 Flexbox 布局 */
+    align-items: center;  /* 垂直居中对齐 */
+}
+
+.title>.more {
+    font-size: 16px;
+    color: #424242;
+    /* float: right;  移除浮动 */
+    margin-left: auto;  /* 如果需要将“查看更多”按钮推到右边 */
+    display: flex;  /* 因为 <a> 包含了 <i>，这里也需要 Flexbox */
+    align-items: center;  /* 垂直居中对齐 */
+    transition: 0.5s;
+}
+
+.title>.more>i {
+    font-size: 20px;
+    color: #b0b0b0;
+    transition: 0.5s;
+    margin-left: 5px;
+}
+/* 悬浮变色 */
+.title>.more:hover,.title>.more:hover>i{
+    color:#FF6A00;
+}
+
+/* 商品展示区域 */
+.phone-list {
+    clear: both;
+    position: relative;
+}
+.phone-list-left {
+    float: left;
+    width: 234px;
+    height: 614px;
+    margin-bottom: 14px;
+    transition: box-shadow 0.3s linear;
+}
+.phone-list-right {
+    float: left;
+    width: 992px;
+    height: 612px;
+}
+.phone-list-left img {
+    width: 234px;
+    height: 614px;
+}
+.shop{
+    width: 234px;
+    height: 300px;
+    margin-bottom: 14px;
+    /* 这里要给左边距，不然右边会多出一点空隙 */
+    margin-left: 14px;
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    transition: box-shadow 0.3s linear;
+}
+.shop img{
+    width: 160px;
+    height: 160px;
+}
+.shop .name{
+    font-size: 14px;
+    color: #333;
+    line-height: 24px;
+}
+.shop .dep{
+    font-size: 12px;
+    color: #b0b0b0;
+    line-height: 24px;
+    /* 防止文字自动换行 */
+    white-space: nowrap;
+    /* 文字超出进行省略 */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin:0 10px 0 10px;
+}
+.shop .price{
+    font-size: 14px;
+    color: #FF6A00;
+    margin-top: 10px;
+}
+/* 旧价格横线样式 */
+.shop .price span{
+    font-size: 12px;
+    color: #b0b0b0;
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+.js-hover-shadow {
+    box-shadow: 0 15px 16px rgba(176, 176, 176, 0.4) !important;
+    transform: translateY(-3px);
+}
+/* 智能穿戴 */
+.wear-box {
+    width: 100%;
+    height: 58px;
+}
+.wear-box>.wear-title {
+    float: left;
+}
+.wear-box>.wear-tab{
+    float: right;
+    line-height: 58px;
+}
+.wear-box>.wear-tab>ul>li{
+    height: 45px;
+    float: left;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.tab-active{
+    border-bottom: 2px solid #FF6A00;
+    color: #FF6A00;
+}
+.shop-last{
+    width: 234px;
+    height: 300px;
+    float: left;
+    margin-left: 14px;
+    margin-bottom: 14px;
+}
+.shop-last li{
+    width: 234px;
+    height: 143px;
+    margin-bottom: 14px;
+    background-color: #fff;
+    padding-top:50px;
+    transition: box-shadow 0.3s linear;
+}
+.shop-last li a{
+    display: block;
+    width: 234px;
+    height: 68px;
+}
+.shop-last li a img{
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin-top: -20px;
+    margin-right: 20px;
+}
+.shop-last li .last-name{
+    width: 94px;
+    font-size: 14px;
+    margin:-10px 110px 5px 30px;
+    color: #333;
+}
+.shop-last li .last-price{
+    width: 94px;
+    font-size: 14px;
+    margin:10px 110px 5px 30px;
+    color: #FF6A00;
+}
+/* .shop:hover,.phone-list-left:hover{
+    box-shadow: 0 15px 16px #b0b0b075!important;
+} */
+/* .shop-last li:hover{
+    box-shadow: 0 15px 16px #b0b0b075;
+} */
+.icon-more{
+    float: right;
+    width: 48px;
+    height: 48px;
+    margin-right: 30px;
+    line-height: 48px;
+}
+.icon-more i{
+    font-size: 48px;
+    color: #FF6A00;
+}
+.text-more{
+    width: 94px;
+    margin:0 110px 0 30px;
+    font-size: 18px;
+    color:#333;
+}
+.text-more span{
+    display: block;
+    font-size: 12px;
+    color: #757575;
+    margin-top: 5px;
+}
+/* 确保悬停效果在所有目标元素上起作用 */
+.js-shadow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.js-hover-shadow {
+    box-shadow: 0 15px 16px rgba(176, 176, 176, 0.4) !important;
+    transform: translateY(-3px);
+}
+
+
+
+/* 动态替换商品列表 */
+/* 选项卡区域的动态设置 */
+/* 非激活状态的区域 - 隐藏并禁用鼠标事件 */
+.eye-po:not(.active), 
+.wear-po:not(.active) {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; /* 禁止鼠标事件 */
+}
+
+/* 激活状态的区域 - 显示并启用鼠标事件 */
+.eye-po.active, 
+.wear-po.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto; /* 允许鼠标事件 */
+}
+
+/* 添加过渡效果使变化更平滑 */
+.eye-po, .wear-po {
+    transition: all 0.3s ease;
+}
+
+
+/* 为智能穿戴区域创建定位上下文 */
+.smart-wear .phone-list {
+    position: relative; 
+}
+
+/* 选项卡内容区域定位 */
+.eye-po, .wear-po {
+    position: absolute; /* 绝对定位 - 内容区域重叠在同一位置 */
+    top: 0;
+    left: 234px; /* 留出左侧大图的空间 */
+}
+
+/* 激活状态下显示并启用鼠标事件 */
+.eye-po.active, .wear-po.active {
+    opacity: 1; /* 完全可见 */
+    pointer-events: auto; /* 允许鼠标事件 */
+}
+
+
+/* 笔记本区域 */
+.laptop{
+    clear: both;
+    position: relative;
+    width: 100%;
+    height: 686px;
+    margin-top: 8px;
+}
+

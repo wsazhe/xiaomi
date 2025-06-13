@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米账号注册</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MiSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif
+        }
+        
+        body {
+            background-color: #fff;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* 左侧背景区域 */
+        .left {
+            width: 30%;
+            height: 100%;
+            background: url(../register/images/banner.a0e6fbf0.jpg);
+            background-size: cover;
+            background-position: 50%;
+        }
+
+        /* 右侧注册区域 */
+        .right-section {
+            width: 69%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+        
+        .head-logo {
+            display: inline-block;
+            background: url(../register/images/milogo.png);
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            background-color: rgb(255, 105, 0);
+            border-radius: 17px;
+            margin-top: 10px;
+            margin-left: 5px;
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+
+        
+        .brand h1 {
+            display: inline-block;
+            font-size: 26px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, .8);
+            margin-left: 10px;
+            margin-top: 7px;
+        }
+        
+        .links {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #999;
+        }
+        
+        .links a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.2s;
+        }
+        
+        .links a:hover {
+            color: #ff6700;
+        }
+        
+        .links .divider {
+            height: 14px;
+            width: 1px;
+            background: #ccc;
+        }
+        
+        .selector select {
+            border: none;
+            background: transparent;
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .register-container {
+            width: 380px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+        
+        .tabs a {
+            text-decoration: none;
+            padding: 0 15px 15px;
+            font-size: 18px;
+            color: #666;
+            margin: 0 10px;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .tabs a.active {
+            color: #333;
+        }
+        
+        .tabs a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #ff6700;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #757575;
+        }
+        
+        .country-select {
+            width: 100%;
+            height: 46px;
+            padding: 0 15px;
+            font-size: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .country-select:focus {
+            border-color: #ff6700;
+            box-shadow: 0 0 0 2px rgba(255, 103, 0, 0.2);
+        }
+        
+        .phone-group {
+            display: flex;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .phone-group:focus-within {
+            border-color: #ff6700;
+            box-shadow: 0 0 0 2px rgba(255, 103, 0, 0.2);
+        }
+        
+        .phone-prefix {
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            font-size: 16px;
+            color: #333;
+            background: #f9f9f9;
+            border-right: 1px solid #e0e0e0;
+        }
+        
+        .phone-prefix span {
+            margin-left: 8px;
+            color: #757575;
+        }
+        
+        .phone-input {
+            flex: 1;
+            border: none;
+            height: 46px;
+            padding: 0 15px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .captcha-group {
+            display: flex;
+        }
+        
+        .captcha-input {
+            flex: 1;
+            height: 46px;
+            padding: 0 15px;
+            font-size: 16px;
+            border: 1px solid #e0e0e0;
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .captcha-input:focus {
+            border-color: #ff6700;
+        }
+        
+        .captcha-button {
+            width: 120px;
+            height: 46px;
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 0 4px 4px 0;
+            font-size: 14px;
+            color: #757575;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .captcha-button:hover {
+            background: #eee;
+        }
+        
+        .checkbox {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .checkbox input[type="checkbox"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .checkbox input[type="checkbox"]:checked {
+            background: #ff6700;
+            border-color: #ff6700;
+        }
+        
+        .checkbox input[type="checkbox"]:checked::before {
+            content: '\2713';
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .checkbox label {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .checkbox a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .checkbox a:hover {
+            color: #ff6700;
+        }
+        
+        .register-button {
+            width: 100%;
+            height: 50px;
+            background: #ff6700;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .register-button:hover {
+            background: #ff8533;
+        }
+        
+        .register-button:active {
+            background: #e65c00;
+        }
+        
+        .no-code {
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        
+        .no-code a {
+            color: #ff6700;
+            text-decoration: none;
+        }
+        
+        .no-code a:hover {
+            text-decoration: underline;
+        }
+        
+        .other-login {
+            text-align: center;
+            position: relative;
+            margin: 50px 0 25px;
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+        
+        .other-login::before,
+        .other-login::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+        
+        .other-login::before {
+            left: 0;
+        }
+        
+        .other-login::after {
+            right: 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 30px;
+            color: #b0b0b0;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧背景区域 -->
+        <div class="left"></div>
+        
+        <!-- 右侧注册区域 -->
+        <div class="right-section">
+            <div class="header">
+                <div class="brand">
+                    <div class="head-logo">
+                    </div>
+                    <h1>小米账号</h1>
+                </div>
+                
+                <div class="links">
+                    <a href="#">用户协议</a>
+                    <a href="#">隐私政策</a>
+                    <span class="divider"></span>
+                    <a href="#">帮助中心</a>
+                    <div class="selector">
+                        <select>
+                            <option>中文(简体)</option>
+                            <option>English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="register-container">
+                <div class="tabs">
+                    <a href="../login/login.html">登录</a>
+                    <a href="./register.html" class="active">注册</a>
+                </div>
+                
+                <div class="input-group">
+                    <label for="country">国家/地区</label>
+                    <select id="country" class="country-select">
+                        <option value="China">中国</option>
+                        <option value="Russia">俄罗斯</option>
+                        <option value="Japan">日本</option>
+                        <option value="Korea">韩国</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="phone">手机号码</label>
+                    <div class="phone-group">
+                        <div class="phone-prefix">
+                            +86 <span>▼</span>
+                        </div>
+                        <input type="tel" id="phone" class="phone-input" placeholder="请输入手机号码">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="captcha">短信验证码</label>
+                    <div class="captcha-group">
+                        <input type="text" id="captcha" class="captcha-input" placeholder="请输入验证码">
+                        <button type="button" class="captcha-button">获取验证码</button>
+                    </div>
+                </div>
+                
+                <div class="checkbox">
+                    <input type="checkbox" id="agreement" checked required>
+                    <label for="agreement">已阅读并同意小米账号<a href="#">用户协议</a>和<a href="#">隐私政策</a></label>
+                </div>
+                
+                <button class="register-button">注册</button>
+                
+                <div class="no-code">
+                    <a href="#">收不到验证码?</a>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 短信验证码倒计时
+        document.querySelector('.captcha-button').addEventListener('click', function() {
+            const button = this;
+            let countdown = 60;
+            button.textContent = `${countdown}s`;
+            button.disabled = true;
+            const interval = setInterval(() => {
+                countdown--;
+                button.textContent = `${countdown}s`;               
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    button.textContent = '获取验证码';
+                    button.disabled = false;
+                }
+            }, 1000);
+        })
+
+
+        
+        // 简单的表单验证
+        document.querySelector('.register-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const phoneInput = document.getElementById('phone');
+            const captchaInput = document.getElementById('captcha');
+            const agreementCheckbox = document.getElementById('agreement');
+            
+            // 验证手机号码
+            if (!phoneInput.value) {
+                alert('请输入手机号码');
+                phoneInput.focus();
+                return;
+            }
+            
+            if (!/^1[3-9]\d{9}$/.test(phoneInput.value)) {
+                alert('请输入有效的手机号码');
+                phoneInput.focus();
+                return;
+            }
+            
+            // 验证验证码
+            if (!captchaInput.value) {
+                alert('请输入验证码');
+                captchaInput.focus();
+                return;
+            }
+            
+            if (captchaInput.value.length < 6) {
+                alert('验证码长度不正确');
+                captchaInput.focus();
+                return;
+            }
+            
+            // 验证用户协议
+            if (!agreementCheckbox.checked) {
+                alert('请阅读并同意用户协议和隐私政策');
+                return;
+            }
+            
+            // 如果所有验证通过
+            alert('注册成功！正在跳转到首页...');
+            // 在实际应用中，这里会有表单提交逻辑
+            window.location.href = '../index.html';
+        });
+    </script>
+</body>
+</html>

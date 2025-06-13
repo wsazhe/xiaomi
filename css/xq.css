@@ -1,0 +1,903 @@
+/* 顶部黑色导航区域 */
+.bck-nav {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #333;
+}
+/* 导航栏字体大小和颜色（左边导航栏） */
+.bck-nav a {
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.nav-left a:hover {
+    color: #ffffff;
+}
+.nav-left {
+    float: left;
+}
+.nav-left li {
+    float: left;
+    position: relative;
+}
+.nav-left li span {
+    color: #424242;
+    margin: 0 4px;
+}
+/* 右边导航栏 */
+.nav-right {
+    float: right;
+}
+.nav-right li {
+    float: left;
+    position: relative;
+}
+/* 除了最后一个li */
+.nav-right li:not(:last-child):hover>a {
+    color: #fff;
+}
+/* 最后一个li */
+/* 删除不必要的规则 */
+/* 覆盖层问题（小） */
+.nav-right li span {
+    color: #424242;
+    margin: 0 6px;
+}
+.nav-right li:nth-child(3){
+    margin-right: 20px;
+    color: #fff;
+}
+/* 购物车区域 */
+.cart {
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    background-color: #ff6700;
+}
+
+/* 触碰购物车后的样式 */
+.cart:hover {
+    background-color: #fff; /* 背景颜色变成白色 */
+    color: rgb(239, 168, 34); /* 字体颜色变成橙色 */
+}
+
+.cart:hover a {
+    color: rgb(239, 168, 34); /* 确保链接字体颜色也变成橙色 */
+}
+.cart a {
+    color: #fff;
+}
+/* 下载APP区域 */
+.app {
+    /* 左导航栏是父级 */
+    position: absolute;
+    top: 40px;
+    /* 固定left的话，盒子会变小 */
+    left:50%;
+    width: 124px;
+    margin-left: -67px;
+    text-align: center;
+    box-shadow: 0 1px 5px #aaa;
+    /* 默认隐藏设置高度为0 */
+    height: 0;
+    /* 超出的部分隐藏 */
+    overflow: hidden;
+    /* 图片过渡效果 */
+    transition: height 0.3s ease-in-out;
+    background-color: #fff;
+    z-index: 2;
+}
+.app img {
+    width: 90px;
+    margin:18px auto 12px;
+}
+.app p {
+    font-size: 14px;
+    color: #333;
+    line-height: 14px;
+}
+/* 下载app图片的悬停效果 */
+.nav-left li:hover>.app {
+    height: 148px;
+}
+/* 下载app里的小三角 */
+.sanjiao {
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #ffffff;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    margin-left: -15px;
+    display: none;
+}
+/* 悬停时显示小三角 */
+.nav-left li:hover>.sanjiao {
+    display: block;
+}
+/* 购物车区域 */
+.cart-list {
+    width: 310px;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    height: 0;
+    line-height: 100px;
+    text-align: center;
+    box-shadow: 0 1px 5px #aaa;
+    background-color: #fff;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    color: black;
+    font-size: 12px;
+    z-index: 2;
+}
+.nav-right li:hover>.cart-list{
+    height: 100px;
+}
+
+
+/* 白色导航栏 */
+
+/* logo图标 */
+.white-nav {
+    width: 100%;
+    height: 100px;
+    /* 如果不清除浮动，会影响布局，logo图片会跑到中间 */
+    float: left;
+    position: relative;
+}
+.logo {
+    width: 60px;
+    height: 100px;
+    float:left;
+}
+.nav-bar{
+    height: 100px;
+    width: 760px;
+    float:left;
+    margin-left: 80px;
+}
+.nav-bar .shop-all li{
+    width: 120px;
+}
+.search{
+    height: 100px;
+    width: 299px;
+    /* 因为和购物框右边对齐 */
+    float:right;
+    position: relative;
+}
+.logo-box{
+    width:55px;
+    height:55px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 23px;
+}
+.logo-img{
+    position: absolute;
+    width: 100%;
+    top:0;
+    left:0;
+    transition: all 0.5s ease-in-out;
+}
+.home-img{
+    position: absolute;
+    width: 100%;
+    top:0;
+    left:-55px;
+    transition: all 0.5s ease-in-out;
+}
+.logo-box:hover .home-img{
+    left:0;
+}
+.logo-box:hover .logo-img{
+    left:-55px;
+}
+
+/* 中间导航栏 */ 
+.nav-bar>ul>li{
+    float: left;
+    height: 100px;
+    line-height: 100px;
+}
+.nav-bar>ul>li>a{
+    display: block;
+    height: 100px;
+    /* 选择padding-right可以使得在空白区悬浮时也能变色--用户体验感 */
+    padding-right: 20px;
+    color: #333;
+}
+.nav-bar>ul>li>a:hover{
+    color: #ff6700;
+}
+
+
+/* 白色导航栏的搜索框 */
+.sear-input{
+    width: 244px;
+    height: 50px;
+    padding-left: 10px;
+    outline: none;
+    border:1px solid #e0e0e0;
+    border-right: none;
+    float: left;
+    margin-top: 25px;
+}
+.search-button{
+    width: 55px;
+    height: 50px;
+    outline: none;
+    float: left;
+    font-size: 25px;
+    margin-top: 25px;
+    border:1px solid #e0e0e0;
+    background-color: #fff;
+    /* 悬停时鼠标指针为手 */
+    cursor: pointer;
+}
+
+
+/* 兄弟选择器 */
+/* .search input:hover,.search input:hover~button{
+    border-color: #b0b0b0;
+} */
+.search button:hover{
+    background-color: #ff6700;
+    color: #fff;
+    border:1px solid #ff6700;
+}
+
+/* 点进去搜索框，边框会变色
+.search input:focus,.search input:focus~button{
+    border-color: #ff6700;
+} */
+/* 鼠标悬停样式 */
+.active-input{
+    border: 1px solid #b0b0b0;
+    border-right: none;
+}
+.active-button{
+    border:1px solid #b0b0b0;
+}
+/* 搜索框中获取焦点后的样式 */
+.fouce-input{
+    border: 1px solid #ff6700;
+    border-right: none;
+}
+.fouce-button{
+    border:1px solid #ff6700;
+}
+/* 搜索栏实现 */
+.search-list{
+    border: 1px solid #ff6700;
+    position: absolute;
+    top:75px;
+    width: 245px;
+    background-color: #ffffff;
+    font-size: 12px;
+    /* 重复了，删除上边框线 */
+    border-top: none;
+    display: none;
+}
+.search-list>ul>li{
+    height: 30px;
+    line-height: 30px;
+}
+.search-list>ul>li>a{
+    display: block;
+    height: 30px;
+    width: 245px;
+    padding-left: 10px;
+    color: #333;
+}
+.search-list>ul>li>a:hover{
+    background-color: #e0e0e040;
+}
+/* 当搜索框获得焦点时（点击），显示搜索列表 */
+.search input:focus+.search-list{
+    display: block;
+}
+
+/* 白色导航栏中间的滑动门效果 */
+.nav-list{
+    width: 100%;
+    /* 先把高度调为0,悬停再设置高度*/
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+    top: 100px;
+    left: 0;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+    transition:height 0.4s ease-in-out;
+    background-color: #fff;
+    z-index: 999;
+}
+.nav-list li
+{
+    float: left;
+    width: 200px;
+    height: 201px;
+}
+.img-box{
+    border-right: 1px solid #e0e0e0;;
+    width: 100%;
+    height: 110px;
+    margin: 20px 0;
+    padding-left: 18px;
+}
+.nav-list li:last-child .img-box{
+    border-right: none;
+}
+.img-box img{
+    width: 160px;
+    height: 110px;
+}
+.nav-name{
+    color:#333;
+    font-size: 14px;
+    line-height:20px;
+    text-align:center;
+}
+.nav-price{
+    color:#ff6700;
+    font-size: 12px;
+    line-height:20px;
+    text-align:center;
+    /* line-height: 20px; */
+}
+.nav-shop:hover .nav-list{
+    height: 229px;
+    border-top: 1px solid #e0e0e0;
+}
+/* 这个为参照物 */
+/* 全部叠在一起 */
+.nav-list>.wrap{
+    position: relative;
+}
+.nav-list>.wrap>.nav-list-all{
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* 先全部隐藏 */
+    opacity: 0;
+}
+
+
+
+/* 这个全部商品分类相对于white盒子里的wrap进行定位 */
+.white-nav{
+    border-bottom: 1px solid #b0b0b060;
+}
+.white-nav>.wrap{
+    position: relative;
+}
+/* 轮播图的侧边栏区域 */
+.nav-bar .slide{
+    border: 1px solid #FF6A00;
+    width: 234px;
+    height: 460px;
+    background-color: #fff;
+    position: absolute; 
+    /* 调整位置使得与边线重合 */
+    top: 99px;
+    left:0;
+    z-index: 10;
+    padding: 20px 0;
+    display: none;
+}
+.nav-bar .slide>ul>li{
+    width: 234px;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 30px;
+}
+.slide a{
+    color: #424242;
+    font-size: 14px;
+}
+.slide>ul>li:hover>a{
+    color: #ffffff;
+}
+.slide>ul>li:hover
+{
+    background-color: #FF6A00;
+}
+.slide i{
+    float: right;
+    padding-right: 20px;
+    color: #fff;
+}
+.slide>ul>li:hover i{
+    color: #b0b0b0;
+}
+
+
+/* 侧边栏滑动门效果 */
+/* 每个侧边栏的滑动窗口太小不一样，所以设置不同的宽度 */
+.slide-list-one{
+    width: 265px;
+}
+.slide-list-two{
+    width: 530px;
+}
+.slide-list-three{
+    width: 785px;
+}
+.slide-list-four{
+    width: 992px;
+}
+.slide-list{
+    height: 460px;
+    position: absolute;
+    top: 0;
+    left: 234px;
+    transition: left 0.8s linear;
+    background-color: #fff;
+    display: none;
+    font-size: 14px;
+    box-shadow: 0 1px 5px #aaa;
+}
+.slide-list>ul{
+    float:left;
+    width: 247px;
+    height: 456px;
+    padding: 2px 0;
+}
+.slide-list>ul>li {
+    width: 247px;
+    height: 76px;
+    padding-left: 20px;
+}
+.slide-list a{
+    display: block;
+    font-size: 14px;
+    width: 247px;
+    height: 76px;
+    line-height: 76px;
+    color: #333;
+}
+.slide-list img{
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-top: 18px;
+    margin-right: 14px;
+}
+
+.slide-list li:hover>a{
+    color: #FF6A00;
+}
+.slide li:hover>.slide-list{
+    display: block;
+}
+.nav-bar .shop-all li:hover>.slide{
+    display: block;
+}
+
+
+/* 商品详情页内容 */
+.xq-product{
+    clear: both;
+    width: 100%;
+    background-color: #fff;
+}
+.xq-product>.product-box{
+    height: 65px;
+    line-height: 65px;
+    box-shadow: 0 4px 5px #b0b0b060;
+}
+.xq-product>.product-box>.wrap>h2{
+    float: left;
+    font-size: 18px;
+    font-weight: 500;
+    color: #424242;
+}
+.xq-product>.product-box>.wrap>.right{
+    float: right;
+    font-size:14px;
+}
+.xq-product>.product-box>.wrap>.right>a:hover{
+    color: #ff6700;
+}
+.product-box-hide{
+    display: none;
+}
+
+/* 提示登录区域 */
+.login-box{
+    clear:both;
+    width: 100%;
+    height: 50px;
+    background-color: #b0b0b030;
+}
+.login-box p{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #424242;
+    
+}
+.login{
+    margin-left: 20px;
+}
+.login a{
+    color: #ff6700;
+}
+.leave{
+    margin-left: 10px;
+    color: #b0b0b0;
+    cursor: pointer;
+}
+
+/* 轮播图区域 */
+/* 商品详情左侧区域 */
+.product-details{
+    width: 100%;
+    /* 弹性布局 */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 12px;
+}
+.product-details .product-img-left{
+    width: 606px;
+}
+.product-details .product-img-left img{
+    width: 560px;
+    height: 560px;
+}
+.product-details .product-img-left .banner-box{
+    width: 560px;
+    height: 560px;
+    position: relative;
+}
+
+/* 复用轮播图的样式 */
+.banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 刚开始全部不显示，用js去控制显示 */
+    opacity: 0;
+    /* 加个过度效果 */
+    transition: opacity 0.8s linear;
+    z-index: -1;
+    cursor: pointer;
+}
+.banner-img:first-child{
+    opacity: 1;
+}
+.box-left{   
+    position: absolute;
+    background: url("../img/icon-slides.png") no-repeat -84px 50%;
+    top: 50%;
+    left: 0;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    z-index: 10;
+    cursor: pointer;
+    outline: none;
+    right:auto
+}
+
+.box-left:hover{
+    background-color: #00000050;
+    color: #fff;
+}
+.box-right{
+    background: url("../img/icon-slides.png") no-repeat -125px 50%;
+    right: 0;
+    left: auto;
+    position: absolute;
+    top: 50%;
+    width: 41px;
+    height: 69px;
+    margin-top: -35px;
+    z-index: 10;
+    cursor: pointer;
+    outline: none;
+}
+.box-right:hover{
+    background-color: #00000050;
+    color: #fff;
+}
+
+.circle-box>ul
+{
+    position: absolute;
+    bottom: 25px;
+    left: 118px;
+}
+/* 圆点区域 */
+.btn-circle {
+    width: 50px;
+    height: 3px;
+    background-color: #b0b0b0;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+/* 放大镜优化 */
+.zoom {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.1s linear;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.big-img {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 500px;
+    border: 1px solid #eee;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translate(20px, -50%);
+    transition: opacity 0.3s;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.big-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.1s linear;
+    transform-origin: top left;
+}
+
+/* 添加鼠标跟随效果 */
+.banner-box:hover {
+    cursor: none;
+}
+
+.zoom, .big-img {
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+
+/* 右边商品区域 */
+/* 商品详细页右侧区域 */
+.product-details .product-right{
+    flex: 1;
+    /* background-color: #f7f4f4; */
+    margin-left: 25px;
+    /* 向左排列 */
+    text-align: left;
+}
+.product-right h2{
+    font-size: 24px;
+    font-weight: 400;
+    color: #424242;
+}
+.product-right .sale-dec{
+    color: #b0b0b0;
+    line-height: 1.5em;
+    font-size: 14px;
+    margin-top: 8px;
+}
+.product-right .p-info{
+    color: #ff6700;
+    font-size: 14px;
+    margin-top:12px;
+}
+.product-right .price-xp{
+    color: #ff6700;
+    font-size: 18px;
+    padding:12px 0 10px;
+}
+.product-right .price-xp span{
+    color: #b0b0b0;
+    font-size: 14px;
+    margin-left: 4px;
+    text-decoration: line-through;
+}
+.product-right .line{
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 12px;
+}
+
+/* 售货地址 */
+.product-right .address-box{
+    border: 1px solid #e0e0e0;
+    background-color: #fafafa;
+    margin: 20px 0;
+    height: 104px;
+    position: relative;
+}
+.product-right .address-icon{
+    position: absolute;
+    left: 20px;
+    top: 33px;
+}
+.product-right .address-icon i{
+    font-size:18px;
+    color: #999;
+}
+.product-right .address-again{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.product-right .address-info{
+    float: left;
+}
+.product-right .address-info span{
+    display: inline-block;
+    margin-right: 14px;
+    font-size: 14px;
+}
+.product-right .edit{
+    display: inline-block;
+    font-size: 14px;
+    color: #ff6700;
+    cursor: pointer;
+}
+.product-right .shop-dec span{
+    font-size: 14px;
+    color: #FF6700;
+}
+
+/* .product-choose .buy-bo{
+    clear: both;
+    height: 198px;
+    margin-bottom: 30px;
+    width: 600px;
+} */
+/* 父容器 */
+/* 使用FLEXBOX布局 */
+/* 将 .option-box ul 的显示方式改为 display: flex，并设置 flex-wrap: wrap，这样一行可以容纳多个选项。同时，根据容器的宽度，调整每个 li 的宽度，使其一行显示两个 */
+.product-choose .buy-bo {
+    clear: both;
+    margin-bottom: 30px;
+    width: 600px;
+    overflow: hidden; /* 确保盒子正确包裹浮动子元素 */
+}
+
+/* 子容器的列表父元素 */
+.product-choose .buy-bo .option-box ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 选项的宽度调整 */
+.product-choose .buy-bo li {
+    width: calc(50% - 6px); /* 每个选项占一行的一半宽度，减去左右间距 */
+    margin-right: 12px;
+    margin-top: 10px;
+    border: 1px solid #e0e0e0;
+    line-height: 42px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* 去除最后一个选项的右侧间距 */
+.product-choose .buy-bo li:nth-child(2n) {
+    margin-right: 0; /* 每两列的最后一个选项，去除右侧间距 */
+}
+
+
+
+.product-choose .buy-bo .option-title{
+    font-size: 18px;
+}
+.product-choose .buy-bo .title{
+    font-size: 18px;
+    color: #333;
+}
+/* 确保优先级 */
+li.buy-option-default {
+  /* 基础样式 */
+  float: left;
+  width: 292px;
+  height: 42px;
+  margin-right: 12px;
+  margin-top: 10px;
+  border: 1px solid #e0e0e0;
+  line-height: 42px;
+  text-align: center;
+  cursor: pointer;
+}
+
+li.buy-option-default:hover,
+li.buy-option-default.active {
+  color: #ff6700;
+  border-color: #ff6700;
+  position: relative; /* 提升层级 */
+}
+
+/* 清除浮动 */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.big-img {
+  pointer-events: none;
+}
+.product-right .btn-box{
+    height: 54px;
+    margin: 10px 0 20px 0;
+}
+.product-right .btn-box .info-cart{
+    width: 300px;
+    height: 51px;
+    background-color: #FF6700;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.product-right .btn-box .like{
+    width: 142px;
+    height: 51px;
+    background-color: #b0b0b0;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all .3s;
+}
+.product-right .btn-box .like:hover{
+    background-color: #757575;
+}
+.product-right .after-sale{
+    margin-top: 10px;
+}
+.product-right .after-sale .support{
+    font-size: 14px;
+    color: #b0b0b0;
+    display: inline-block;
+    margin-right: 10px;
+}
+.product-right .after-sale .support i{
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    font-weight: 300;
+    margin-right: 2px;
+}
+
+/* 价格说明 */
+.price-dec{
+    width: 100%;
+    background-color: #f5f5f5;
+    margin-top: 10px;
+    padding-bottom: 50px;
+}
+.price-dec h2{
+    font-size: 22px;
+    padding: 22px 0;
+    font-weight: 500;
+}
+.price-dec .wrap{
+    position: relative;
+}
+.price-dec .dec-img img{
+    width: 1226px;
+}

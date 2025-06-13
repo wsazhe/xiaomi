@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米账号登录</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4942469_dz4nbqn3jvm.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MiSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #fff;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 左侧背景区域 */
+        .left {
+            width: 30%;
+            height: 100%;
+            background: url(../register/images/banner.a0e6fbf0.jpg);
+            background-size: cover;
+            background-position: 50%;
+        }
+        /* 右侧登录区域 */
+        .right-section {
+            width: 69%;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .head-logo {
+            display: inline-block;
+            background: url(../register/images/milogo.png);
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            background-color: rgb(255, 105, 0);
+            border-radius: 17px;
+            margin-top: 10px;
+            margin-left: 5px;
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+        .brand h1 {
+            display: inline-block;
+            font-size: 26px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, .8);
+            margin-left: 10px;
+            margin-top: 7px;
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .links a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .links .divider {
+            height: 14px;
+            width: 1px;
+            background: #ccc;
+        }
+
+        .selector select {
+            border: none;
+            background: transparent;
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .login-container {
+            width: 380px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        .tabs a {
+            text-decoration: none;
+            padding: 0 15px 15px;
+            font-size: 18px;
+            color: #666;
+            margin: 0 10px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .tabs a.active {
+            color: #333;
+        }
+
+        .tabs a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #ff6700;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            height: 50px;
+            padding: 0 20px;
+            font-size: 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #ff6700;
+            box-shadow: 0 0 0 2px rgba(255, 103, 0, 0.2);
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: flex-start;
+            margin: 25px 0;
+            position: relative;
+        }
+
+        .checkbox input[type="checkbox"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+        .checkbox input[type="checkbox"]:checked {
+            background: #ff6700;
+            border-color: #ff6700;
+        }
+
+        .checkbox input[type="checkbox"]:checked::before {
+            content: '\2713';
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .checkbox label {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .checkbox a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .checkbox a:hover {
+            color: #ff6700;
+        }
+
+        .login-button {
+            width: 100%;
+            height: 50px;
+            background: #ff6700;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .login-button:hover {
+            background: #ff8533;
+        }
+
+        .login-button:active {
+            background: #e65c00;
+        }
+
+        .additional-links {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0 35px;
+            font-size: 14px;
+        }
+
+        .additional-links a {
+            color: #ff6700;
+            text-decoration: none;
+        }
+
+        .additional-links a:hover {
+            text-decoration: underline;
+        }
+
+        .other-login {
+            text-align: center;
+            position: relative;
+            margin: 40px 0 25px;
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+
+        .other-login::before,
+        .other-login::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .other-login::before {
+            left: 0;
+        }
+
+        .other-login::after {
+            right: 0;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .iconfont {
+            font-size: 20px;
+        }
+
+        .icon:hover {
+            background: #e0e0e0;
+            transform: translateY(-3px);
+        }
+
+        .icon.wechat:hover {
+            background: #e7f4eb;
+            color: #09bb07;
+        }
+
+        .icon.alipay:hover {
+            background: #e7f4f9;
+            color: #009fe8;
+        }
+
+        .icon.xiaomi:hover {
+            background: #ffefe6;
+            color: #ff6700;
+        }
+
+        .icon.qq:hover {
+            background: #e7f4ff;
+            color: #12b7f5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 30px;
+            color: #b0b0b0;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧背景区域 -->
+        <div class="left">
+        </div>
+        
+        <!-- 右侧登录区域 -->
+        <div class="right-section">
+            <div class="header">
+                <div class="brand">
+                    <div class="head-logo">
+                    </div>
+                    <h1>小米账号</h1>
+                </div>
+                
+                <div class="links">
+                    <a href="#">用户协议</a>
+                    <a href="#">隐私政策</a>
+                    <span class="divider"></span>
+                    <a href="#">帮助中心</a>
+                    <div class="selector">
+                        <select>
+                            <option>中文(简体)</option>
+                            <option>English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="login-container">
+                <div class="tabs">
+                    <a href="#" class="active">登录</a>
+                    <a href="#">注册</a>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" placeholder="邮箱/手机号码/小米ID" required>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" placeholder="密码" required>
+                </div>
+                
+                <div class="checkbox">
+                    <input type="checkbox" id="agreement" checked required>
+                    <label for="agreement">已阅读并同意小米账号<a href="#">用户协议</a>和<a href="#">隐私政策</a></label>
+                </div>
+                
+                <button class="login-button">登录</button>
+                
+                <div class="additional-links">
+                    <a href="#">忘记密码?</a>
+                    <a href="#">手机号码登录</a>
+                </div>
+                
+                <div class="other-login">其他方式登录</div>
+                
+                <div class="icons">
+                    <div class="icon alipay">
+                        <i class="iconfont icon-zhifubaozhifu"></i>
+                    </div>
+                    <div class="icon wechat">
+                        <i class="iconfont icon-weixin"></i>
+                    </div>
+                    <div class="icon qq">
+                        <i class="iconfont icon-QQ"></i>
+                    </div>
+                    <div class="icon xiaomi">
+                        <i class="iconfont icon-weibo"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 简单的表单验证和交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginButton = document.querySelector('.login-button');
+            const inputs = document.querySelectorAll('input');
+            // 添加输入框动画
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.style.transform = 'translateY(-2px)';
+                    this.parentElement.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.style.transform = 'translateY(0)';
+                    this.parentElement.style.boxShadow = 'none';
+                });
+            });
+            // 登录按钮动画
+            loginButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                // 模拟加载效果
+                this.innerHTML = '登录中 <i class="fas fa-spinner fa-spin"></i>';
+                this.disabled = true;
+                setTimeout(() => {
+                    this.innerHTML = '登录成功!';
+                    this.style.background = '#4CAF50';
+                    // 重置
+                    setTimeout(() => {
+                        this.innerHTML = '登录';
+                        this.style.background = '#ff6700';
+                        this.disabled = false;
+                    }, 1500);
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
