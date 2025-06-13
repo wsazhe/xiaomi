@@ -1,3 +1,372 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9aaf107a806a32843e11a5f9e253d8867b508dee6c1e82a6d38e4d150a234b9d
-size 16830
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的购物车</title>
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4878258_1d7iixzki1j.css">
+    <!-- 引入样式表 -->
+    <!-- 网页的默认效果 -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 顶部导航效果 -->
+    <link rel="stylesheet" href="css/xq.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-inner">
+            <div class="logo-area">
+                <img src="https://www.mi.com/favicon.ico" alt="小米Logo">
+                <h1 class="page-title">我的购物车</h1>
+                <span class="tips">温馨提示：产品型号购买成功，以最终下单为准哦~</span>
+            </div>
+            <div class="auth-link">
+                <a href="login/login.html">登录</a> | <a href="register/register.html">注册</a>
+            </div>
+        </div>
+    </div>
+    <div class="cart-wrap">
+        <!-- 购物车表格 -->
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th class="check-col">
+                        <input type="checkbox" checked> 全选
+                    </th>
+                    <th>商品</th>
+                    <th>商品名称</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 商品行1 -->
+                <tr class="cart-item">
+                    <td class="check-col">
+                        <input type="checkbox" checked>
+                    </td>
+                    <td class="img-col">
+                        <img src="img/cart1.png" alt="商品1">
+                    </td>
+                    <td class="name-col">小米移动电源3 20000mAh USB-C双向快充版</td>
+                    <td class="price-col">119元</td>
+                    <td class="qty-col">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" value="1" class="qty-input">
+                        <button class="qty-btn plus">+</button>
+                    </td>
+                    <td class="subtotal-col">119元</td>
+                    <td class="action-col">×</td>
+                </tr
+                <!-- 商品行2 -->
+                <tr class="cart-item">
+                    <td class="check-col">
+                        <input type="checkbox" checked>
+                    </td>
+                    <td class="img-col">
+                        <img src="img/cart2.png" alt="商品2">
+                    </td>
+                    <td class="name-col">日常元素防蛀护龈牙膏 疏香白茶 120g/1支</td>
+                    <td class="price-col">12.9元</td>
+                    <td class="qty-col">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" value="1" class="qty-input">
+                        <button class="qty-btn plus">+</button>
+                    </td>
+                    <td class="subtotal-col">12.9元</td>
+                    <td class="action-col">×</td>
+                </tr>
+
+                <!-- 商品行3 -->
+                <tr class="cart-item">
+                    <td class="check-col">
+                        <input type="checkbox" checked>
+                    </td>
+                    <td class="img-col">
+                        <img src="img/cart3.png" alt="商品3">
+                    </td>
+                    <td class="name-col">REDMI Turbo 4 12GB+256GB 祥云白</td>
+                    <td class="price-col">1699元</td>
+                    <td class="qty-col">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" value="1" class="qty-input">
+                        <button class="qty-btn plus">+</button>
+                    </td>
+                    <td class="subtotal-col">1699元</td>
+                    <td class="action-col">×</td>
+                </tr>
+                <tr class="service-row">
+                    <td colspan="7" style="text-align: left; padding-left: 120px;"> <!-- 缩进对齐商品图 -->
+                        <div class="service-item">
+                            <span class="service-plus">+</span>
+                            <span class="service-text">保值换新服务99元</span>
+                            <a href="#" class="service-link">了解享换新计划&gt;</a>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-plus">+</span>
+                            <span class="service-text">MiCare 无忧版237元（已省102元）</span>
+                            <a href="#" class="service-link">了解尊享服务&gt;</a>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-plus">+</span>
+                            <span class="service-text">意外保 1年299元（意外免费换）</span>
+                            <a href="#" class="service-link">了解意外保护&gt;</a>
+                        </div>
+                        <div class="service-item">
+                            <span class="service-plus">+</span>
+                            <span class="service-text">碎屏保 1年118元（已省51元）</span>
+                            <a href="#" class="service-link">了解意外保护&gt;</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 底部结算栏 -->
+        <div class="cart-footer">
+            <div class="footer-left">
+                <a href="#">继续购物</a>
+                <span class="selected-count">已选择3件</span>
+            </div>
+            <div class="footer-right">
+                <span class="total-price">合计：<em>1830.9</em>元</span>
+                <button class="checkout-btn">去结算</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrap">
+            <div class="footer-service">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-banshou"></i>
+                            <span>预约维修服务</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-7tiantuihuan"></i>
+                            <span>7天无理由退货</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-kuaijin15miao"></i>
+                            <span>15天免费换货</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-liwu-01"></i> 
+                            <span>满69包邮</span> 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="iconfont icon-dingwei"></i>
+                            <span>1100余家售后网点</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li>选购指南</li>
+                    <li><a href="">手机</a></li>
+                    <li><a href="">电视</a></li>
+                    <li><a href="">笔记本</a></li>
+                    <li><a href="">平板</a></li>
+                    <li><a href="">穿戴</a></li>
+                    <li><a href="">耳机</a></li>
+                    <li><a href="">家电</a></li>
+                    <li><a href="">路由器</a></li>
+                    <li><a href="">音箱</a></li>
+                    <li><a href="">配件</a></li>
+                </ul>
+                <ul>
+                    <li>服务中心</li>
+                    <li><a href="">申请售后</a></li>
+                    <li><a href="">售后政策</a></li>
+                    <li><a href="">维修服务价格</a></li>
+                    <li><a href="">订单查询</a></li>
+                    <li><a href="">以旧换新</a></li>
+                    <li><a href="">保障服务</a></li>
+                    <li><a href="">防伪查询</a></li>
+                    <li><a href="">F码通道</a></li>
+                </ul>
+                <ul>
+                    <li>线下门店</li>
+                    <li><a href="">小米之家</a></li>
+                    <li><a href="">服务网点</a></li>
+                    <li><a href="">授权体验店/专区</a></li>
+                </ul>
+                <ul>
+                    <li>关于小米</li>
+                    <li><a href="">了解小米</a></li>
+                    <li><a href="">加入小米</a></li>
+                    <li><a href="">投资者关系</a></li>
+                    <li><a href="">ESG与可持续发展</a></li>
+                    <li><a href="">廉洁举报</a></li>
+                </ul>
+                <ul>
+                    <li>关注我们</li>
+                    <li><a href="">新浪微博</a></li>
+                    <li><a href="">官方微信</a></li>
+                    <li><a href="">联系我们</a></li>
+                    <li><a href="">公益基金会</a></li>
+                </ul>
+                <div class="footer-slide">
+                    <div class="f-slide-top">
+                        <p class="phone-number">950816</p>
+                        <p class="work-time">8:00-18:00（仅收市话费）</p>
+                        <button><i class="iconfont icon-xiaoxi1"></i>人工客服</button>
+                    </div>
+                    <div class="f-slide-bottom">
+                        <p class="phone-number">950818</p>
+                        <p class="work-time">8:00-18:00（仅收市话费）</p>
+                        <p class="jieshao">手机适用于:Xiaomi MIX Fold系列、MIX Flip系列、数字12系列及以上电视适用于:98寸、100寸电视</p>
+                        <button><i class="iconfont icon-xiaoxi1"></i>人工客服</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-info">
+        <div class="wrap">
+            <!-- 这个盒子用于包裹版权内容区域，用来清除浮动效果，防止最后的logo图片一直贴在上面 -->
+            <div style="height: 110px;">
+                <div class="logo-bottom">
+                    <i class="iconfont icon-icon-xiaomiguishu"></i>
+                </div>
+                <div class="text-bottom">
+                    <p class="sites">
+                        <a href="">小米商城</a>
+                        <span>|</span>
+                        <a href="">小米澎湃0S</a>
+                        <span>|</span>
+                        <a href="">米家</a>
+                        <span>|</span>
+                        <a href="">多看</a>
+                        <span>|</span>
+                        <a href="">游戏</a>
+                        <span>|</span>
+                        <a href="">音乐</a>
+                        <span>|</span>
+                        <a href="">政企服务</a>
+                        <span>|</span>
+                        <a href="">小米天猫店</a>
+                        <span>|</span>
+                        <a href="">小米集团隐私政策</a>
+                        <span>|</span>
+                        <a href="">小米公司儿童信息保护规则</a>
+                        <span>|</span>
+                        <a href="">小米商城隐私政策</a>
+                        <span>|</span>
+                        <a href="">小米商城用户协议</a>
+                        <span>|</span>
+                        <a href="">问题反馈</a>
+                        <span>|</span>
+                        <a href="">Select Locaton</a>
+                    </p>
+                    <p class="sites">
+                        <a href="">北京互联网法院法律服务工作站</a>                        
+                        <span>|</span>
+                        <a href="">中国消费者协会</a>
+                        <span>|</span>
+                        <a href="">北京市消费者协会</a>                                                                                                                                                                            
+                    </p>
+                    <p class="sites">
+                        &copy;
+                        <a href="">mi.com</a>
+                        京ICP证110507号
+                        <a href="">京ICP备10046444号</a>
+                        <a href="">京公网安备11010802020134号</a>
+                        <a href="">京网文[2023J0169-004号</a>
+                        <br>
+                        <a href="">（京）网械平台备字(2018)第00005号</a>
+                        <a href="">药品医疗器械网络信息服务备案 （京）网药械信息备字(2024)第00478号</a>
+                        <a href="">营业执照</a>
+                        <a href="">医疗器械质量公告</a>
+                        <br>
+                        <a href="">增值电信业务经营许可证编号:京B2-20180851</a>
+                        网络食品经营备案
+                        京食药网食备202010048
+                        <a href="">食品经营许可证</a>
+                        新出发京批字第直220280号
+                        <br>
+                        违法和不良信息举报电话:171-5104-4404
+                        <a href="">知识产权侵权投诉</a>
+                        本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+                    </p>
+                </div>
+            </div>
+            <div class="bottom-img">
+                <a href="">
+                    <img src="img/v-logo-1.png" alt="">
+                </a>
+                <a href="">
+                    <img src="img/v-logo-2.png" alt="">
+                </a>
+                <a href="">
+                    <img src="img/v-logo-3.png" alt="">
+                </a>
+                <a href="">
+                    <img class="stop-img" src="img/v-logo-4.png" alt="">
+                    <img class="stop-img bottom-img-hide" src="img/v-logo-5.png" alt="">
+                </a>
+            </div>
+            <div class="page-bottom">
+                <p>让全球每个人都能享受科技带来的美好生活</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-menu">
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-shoujiAPP"></i>
+                    <p>手机APP</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="iconfont icon-gerenzhongxin"></i>
+                    <p>个人中心</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="iconfont icon-banshou"></i>
+                    <p>售后服务</p>
+                </a>                
+            </li>
+            <li>
+                <a href="">
+                    <i class="iconfont icon-kefu"></i>
+                    <p>人工客服</p>
+                </a>                
+            </li>
+            <li>
+                <a href="">
+                    <i class="iconfont icon-gouwuche1"></i>
+                    <p>购物车</p>
+                </a>                
+            </li>
+        </ul>
+        <ul class="return-top right-menu-hide">
+            <li>
+                <a href="">
+                    <i class="iconfont icon-huidingbu"></i>
+                    <p>回顶部</p>
+                </a>                
+            </li>
+        </ul>
+    </div>
+    <script src="js/top.js"></script>
+</body>
+</html>
+
+
