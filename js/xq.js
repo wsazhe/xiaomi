@@ -192,3 +192,47 @@ leave.addEventListener("click",function(){
         
         // 初始化放大镜
         initMagnifier();
+//底部logo来回切换
+var link_img_index = 0;
+setInterval(function(){
+    var link_img = document.getElementsByClassName("stop-img");
+    link_img_index++;
+    if(link_img_index>=2)
+    {
+        link_img_index=0;
+    }
+    if(link_img_index==1)
+    {
+        link_img[1].classList.remove("bottom-img-hide");
+        link_img[0].classList.add("bottom-img-hide");
+    }
+    else if(link_img_index==0)
+    {
+        link_img[0].classList.remove("bottom-img-hide");
+        link_img[1].classList.add("bottom-img-hide");
+    }
+},3000)
+
+
+//通过Bom对象window来监听鼠标滚轮的滚动事件
+window.addEventListener('scroll',function(){
+    //获取滚条距离顶部的距离
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    //添加条件
+    if(scrollTop>=400){
+        var returnTop = document.querySelector(".return-top");
+        //删除让元素隐藏的样式
+        returnTop.classList.remove("right-menu-hide");
+        //让上面的块往上移动,保证回顶部是最后一个元素
+        var right_menu = document.querySelector(".right-menu");
+        right_menu.style.top = "253px";
+    }
+    else{
+        var returnTop = document.querySelector(".return-top");
+        //添加让元素隐藏的样式
+        returnTop.classList.add("right-menu-hide");
+        //让上面的块往下移动,保证购物车是最后一个元素
+        var right_menu = document.querySelector(".right-menu");
+        right_menu.style.top = "410px";
+    }
+})
